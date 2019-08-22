@@ -1,0 +1,19 @@
+{
+  "name": "foruhuru",
+  "version": "1.0.0",
+  "description": "For Uhuru",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sabe1213/ForUhuru.git"
+  },
+  "author": "S.Abe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sabe1213/ForUhuru/issues"
+  },
+  "homepage": "https://github.com/sabe1213/ForUhuru#readme"
+}
