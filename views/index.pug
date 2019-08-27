@@ -15,12 +15,14 @@ block content
             name: {
               label: "名前",
               type: "text",
-              placeholder: "氏名"
+              placeholder: "氏名",
+              required: true
             },
             age: {
               label: "年齢",
               type: "number",
-              placeholder: "年齢"
+              placeholder: "年齢",
+              required: false
             },
             sex: {
               label: "性別",
@@ -30,12 +32,14 @@ block content
             phonenum: {
               label: "電話番号",
               type: "tel",
-              placeholder: "電話番号"
+              placeholder: "電話番号",
+              required: false
             },
             postcode: {
               label: "郵便番号",
               type: "text",
-              placeholder: "郵便番号"
+              placeholder: "郵便番号",
+              required: false
             },
             address: {
               label: "住所",
@@ -57,7 +61,7 @@ block content
                 else if item.type == "textarea"
                   textarea.u-full-width(type=item.type id=name name=name placeholder=item.placeholder readonly=mode) #{inputs[name]}
                 else
-                  input.u-full-width(type=item.type id=name name=name placeholder=item.placeholder value=inputs[name] readonly=mode)
+                  input.u-full-width(type=item.type id=name name=name placeholder=item.placeholder value=inputs[name] required=item.required readonly=mode)
               input.button-primary(type='submit' name='submit' value=submitLabel)
               if mode
                 input.button(type='submit' name='submit' value='修正')
