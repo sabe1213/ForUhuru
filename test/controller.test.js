@@ -17,7 +17,7 @@ test('ユーザ情報の登録', function(){
     done();
   });
 })
-test('ユーザ情報の登録', function(){
+test('ユーザ情報の登録エラー', function(){
   db.addUser = jest.fn(async (user, next) => {next('error', {});});
   controller.register(user, (err, res) => {
     expect(err).toBeDefined(err)

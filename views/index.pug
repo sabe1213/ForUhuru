@@ -45,20 +45,20 @@ block content
           };
         form(method='POST' action='/')
           .row
-            each item, name in inputForms
-              label(for=name) #{item.label}
-              if item.type == "select"
-                select.u-full-width(id=name name=name readonly=mode)
-                  if mode
-                    option(value=inputs[name]) #{item.options[inputs[name]]}
-                  else
-                    each val, key in item.options
-                      option(value=key) #{val}
-              else if item.type == "textarea"
-                textarea.u-full-width(type=item.type id=name name=name placeholder=item.placeholder readonly=mode) #{inputs[name]}
-              else
-                input.u-full-width(type=item.type id=name name=name placeholder=item.placeholder value=inputs[name] readonly=mode)
-            input.button-primary(type='submit' name='submit' value=submitLabel)
-            if mode
-              input(type='submit' name='submit' value='修正')
+              each item, name in inputForms
+                label(for=name) #{item.label}
+                if item.type == "select"
+                  select.u-full-width(id=name name=name readonly=mode)
+                    if mode
+                      option(value=inputs[name]) #{item.options[inputs[name]]}
+                    else
+                      each val, key in item.options
+                        option(value=key) #{val}
+                else if item.type == "textarea"
+                  textarea.u-full-width(type=item.type id=name name=name placeholder=item.placeholder readonly=mode) #{inputs[name]}
+                else
+                  input.u-full-width(type=item.type id=name name=name placeholder=item.placeholder value=inputs[name] readonly=mode)
+              input.button-primary(type='submit' name='submit' value=submitLabel)
+              if mode
+                input.button(type='submit' name='submit' value='修正')
 

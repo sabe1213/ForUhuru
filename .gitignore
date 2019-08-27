@@ -1,0 +1,4 @@
+# npm installで追加されたファイルを除外
+node_modules/*
+# 環境変数
+.env
