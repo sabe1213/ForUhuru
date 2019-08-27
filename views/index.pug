@@ -1,5 +1,64 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .container
+    .row
+      .one-half.column(style="margin-top: 10%")
+        - var title = '登録情報';
+        - var submitLabel = '決定';
+        if mode
+          - title = '登録情報確認';
+          - submitLabel = '登録';
+        h4 #{title}
+        -
+          var inputForms = {
+            name: {
+              label: "名前",
+              type: "text",
+              placeholder: "氏名"
+            },
+            age: {
+              label: "年齢",
+              type: "number",
+              placeholder: "年齢"
+            },
+            sex: {
+              label: "性別",
+              type: "select",
+              options: {0: "-", 1: "男性", 2:"女性"}
+            },
+            phonenum: {
+              label: "電話番号",
+              type: "tel",
+              placeholder: "電話番号"
+            },
+            postcode: {
+              label: "郵便番号",
+              type: "text",
+              placeholder: "郵便番号"
+            },
+            address: {
+              label: "住所",
+              type: "textarea",
+              placeholder: "住所",
+            }
+          };
+        form(method='POST' action='/')
+          .row
+            each item, name in inputForms
+              label(for=name) #{item.label}
+              if item.type == "select"
+                select.u-full-width(id=name name=name readonly=mode)
+                  if mode
+                    option(value=inputs[name]) #{item.options[inputs[name]]}
+                  else
+                    each val, key in item.options
+                      option(value=key) #{val}
+              else if item.type == "textarea"
+                textarea.u-full-width(type=item.type id=name name=name placeholder=item.placeholder readonly=mode) #{inputs[name]}
+              else
+                input.u-full-width(type=item.type id=name name=name placeholder=item.placeholder value=inputs[name] readonly=mode)
+            input.button-primary(type='submit' name='submit' value=submitLabel)
+            if mode
+              input(type='submit' name='submit' value='修正')
+

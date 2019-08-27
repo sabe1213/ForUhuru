@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  .container
+    .row
+      .one-half.column(style="margin-top: 10%")
+        h4 登録情報
+        form(method='GET' action='/')
+          .row
+            label(for="name") 名前
+            p.u-full-width(name="name") #{name}
+            label(for="age") 年齢
+            p.u-full-width(name="age") #{age} 
+            label(for="sex") 性別
+            case sex
+              when '0'
+                p.u-full-width(name="sex") -
+              when '1'
+                p.u-full-width(name="sex") 男性
+              when '2'
+                p.u-full-width(name="sex") 女性
+            label(for="phonenum") 電話番号
+            p.u-full-width(name="phonenum") #{phonenum} 
+            label(for="postcode") 郵便番号 
+            p.u-full-width(name="postcode") #{postcode} 
+            label(for="address") 住所 
+            p.u-full-width(name="address") #{address} 
+            button.button-primary(type='submit') 戻る
+        <a class="button" href="/list">一覧確認</a>

@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  .container
+    .row
+      .column(style="margin-top: 10%")
+        h4 登録情報一覧
+        table.u-full-width
+          thead
+            tr
+              th 名前
+              th 年齢
+              th 性別
+              th 電話番号
+              th 郵便番号
+              th 住所 
+          tbody
+            each user in users
+              tr
+                td #{user.name}
+                td #{user.age}
+                case user.sex
+                  when '0'
+                    td -
+                  when '1'
+                    td 男性
+                  when '2'
+                    td 女性
+                td #{user.phonenum}
+                td #{user.postcode}
+                td #{user.address}
+        <a class="button" href="/">個人情報登録</a>
+
