@@ -1,7 +1,11 @@
 language: node_js
 node_js:
-  - node
+- node
 dist: trusty
 sudo: false
 cache: yarn
 script: yarn run jest
+deploy:
+  provider: heroku
+  api_key:
+    secure: vrgKWyzEWrq7u+WzZbO+t3ec7+kMUIKoN8UANiq+4DnSOMBphX7KtKnHg77Bno/baCA6x8ydeCHyDSUt/V1kLbu6Mi6ONismIGpCFLi1bNvmobO5yO5/2uOuUgNLCib1Sv0si+DVL48crPtYdFci9K1yzWHah8DaWotHF/zGJ2+RSSj6gQ2sGwcIoZMekSej+4o/5v0vbj829nD/BaOG9uQZYMhAs8Vcd8VZHXX9wAQsQYDQGo8aaLwERO1di+2P2uChm/SBrZXTuxbc3+O0oB3ijTYK8XFi+03UziRG6+Bw8wUAl/Ter3XtciaiYUS+kAlthIyB3qHSDLJr1M7ClGf0z7xuvBWcm7VN/iq5OOu6RyjweTJPlJUw2dEv4HP4vT5AVbHyvZMLyT38kuSyVmJ4yIKQ9uHyaudFm4XG4srOR8vcCjgPaGN6W7itB7ZoBaO9xgeZVEuKS9QZtnT20vrCDKcrwxB1Gf+owsHA1b3W6GCK+PdL0u8uW6fi3KcpUDHSYbe7QXTu+taFoEcUUBQs2s4qB2qWluor2kixKK3wbAm73WAkN5Ivrsy9l3UcsWC+Tdi4czpf8O7K5me1qxXEObrzMK1cnEvmKOelCKnLsNpDFxyGX/alb4j/5ynX4zoXza89PsCBc7TIk+yfzh3/aAGTBD+ZmzAXnTuxFIc=
